@@ -4,5 +4,47 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  /* justify-content: center; */
+}
+
+.null-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   justify-content: center;
+}
+
+.order-wrapper {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+  border-top: 1rpx solid #ededed;
+  padding: 20rpx 20rpx 10rpx 20rpx;
+}
+
+.order-id-wrapper {
+  border-bottom: 1rpx solid #ededed;
+  padding-bottom: 10rpx;
+}
+
+.order-desc-wrapper {
+  font-size: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #ededed;
+}
+
+.oreder-action-wrapper {
+  padding-top: 10rpx;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.summary {
+  padding-right: 40rpx;
 }

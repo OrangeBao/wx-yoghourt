@@ -1,4 +1,22 @@
 <!--pages/order/index.wxml-->
 <view class="page-container">
-  <text>您还没有点过外卖哦~</text>
+  <view class="null-wrapper" wx:if="{{orderList.length === 0}}">
+    <text>您还没有点过外卖哦~</text>
+  </view>
+  <scroll-view wx:if="{{orderList.length > 0}}">
+    <view class="order-wrapper" wx:for="{{orderList}}">
+      <view class="order-id-wrapper">
+        <text>订单号:{{item.orderId}}</text>
+      </view>
+      <view class="order-desc-wrapper">
+        <text>产品描述</text>
+      </view>
+      <view class="oreder-action-wrapper">
+      <text class="summary">共2件商品 实付款：￥100</text>
+        <view>
+          <button size="mini">确认收货</button>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
 </view>

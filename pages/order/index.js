@@ -4,10 +4,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    address: null,
-    name: null,
-    fresh: 0,
-    msg: null
+    orderList: [
+      {
+        orderId: 'DX111222333',
+      },
+      {
+        orderId: 'DX111222334',
+      },
+      {
+        orderId: 'DX111222335',
+      }
+    ]
   },
 
   /**
