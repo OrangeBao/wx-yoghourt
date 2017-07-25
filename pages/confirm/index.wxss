@@ -1,0 +1,69 @@
+/* pages/confirm/index.wxss */
+.row-block {
+  background-color: #fff;
+  display: flex;
+  align-self: stretch;
+  padding: 15rpx 20rpx 15rpx 20rpx;
+  margin-top: 20rpx;
+  border-top: 1rpx solid #e6e6e6;
+  border-bottom: 1rpx solid #e6e6e6;
+  font-size: 35rpx;
+}
+
+.row-block.normal {
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.row-block.normal.address {
+  align-items: center;
+}
+
+.row-block.pro-form {
+  flex-direction: column;
+}
+
+.pro-form .form-title {
+  border-bottom: 1px solid #eeeeee;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx; 
+}
+
+.pro-form .pro-detail {
+  font-size: 30rpx;
+  border-bottom: 1px solid #eeeeee;
+  padding-top: 15rpx;
+  padding-bottom: 15rpx; 
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+}
+
+.pro-form .pro-detail .pro-name {
+  width: 300rpx;
+}
+
+.pro-form .pro-detail:last-child {
+  border-bottom: 0rpx;
+}
+
+.row-block.pay-bar {
+  position: fixed;
+  bottom: 0rpx;
+  width: calc(100% - 40rpx);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.address-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-wrapper .text-wrapper {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+}

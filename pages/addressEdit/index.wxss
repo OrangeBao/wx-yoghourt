@@ -1,0 +1,55 @@
+.row-wrapper {
+  display: flex;
+  align-self: stretch;
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  align-items: center;
+}
+
+.approach-top {
+  align-self: flex-start;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-self: stretch;
+  padding: 0 20rpx 0 20rpx;
+}
+
+.row-wrapper .label {
+  width: 200rpx;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.row-wrapper.bottom-line {
+  border-bottom: 0.5rpx solid #eeeeee;
+}
+
+.row-wrapper.contact input {
+  border-bottom: 0.5rpx solid #eeeeee;
+  display: flex;
+  flex: 1;
+}
+
+.radio-group {
+  padding-top: 20rpx;
+}
+
+.page-container button {
+  margin-top: 20rpx;
+}
+
+.place-holder {
+  color: #808080;
+}
+
+.address-wrapper {
+  display: flex;
+  flex: 1;
+}

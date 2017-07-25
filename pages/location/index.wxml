@@ -1,0 +1,18 @@
+<!--pages/location/index.wxml-->
+<import src="../../template/loading.wxml"/>
+<view class="page-container">
+  <scroll-view scroll-y class="scroll-wrapper">
+    <view class="row-wrapper" wx:for="{{addressList}}">
+      <view bindtap="selectThis" data-index="{{index}}" class="info-wrapper">
+        <view class="text-wrapper">{{item.name}} {{item.sex ? '女士' : '先生'}} {{item.phone}}</view>
+        <view class="text-wrapper">{{item.address}}</view>
+      </view>
+      <view class="edit-btn" bindtap="editAddress" data-index="{{index}}">
+        <image class="edit-btn-img" src="../../assert/edit.png" />
+      </view>
+    </view>
+  </scroll-view>
+  <view class="add-btn-wrapper">
+    <button style="width: 92%" type="primary" bindtap="addNewAddress" hover-class="other-button-hover"> 新增 </button>
+  </view>
+</view>

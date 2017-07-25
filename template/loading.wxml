@@ -1,0 +1,3 @@
+<template name="loading">
+  <image class="common-loading" src="../../assert/loading.gif" />
+</template>

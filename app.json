@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/mine/index",
+    "pages/order/index",
+    "pages/location/index",
+    "pages/addressEdit/index",
+    "pages/confirm/index"
+  ],
+  "window":{
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "橘子家酸奶",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#2dad17",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "酸奶",
+        "iconPath": "assert/shop.png",
+        "selectedIconPath": "assert/shopSelected.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "订单",
+        "iconPath": "assert/order.png",
+        "selectedIconPath": "assert/orderSelected.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "assert/mine.png",
+        "selectedIconPath": "assert/mineSelected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

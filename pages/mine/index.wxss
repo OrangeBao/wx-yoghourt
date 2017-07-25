@@ -1,0 +1,63 @@
+.mine-title {
+  border-top: 1rpx solid #eeeeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self:stretch;
+  padding-bottom: 10rpx;
+}
+
+.image-pic {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100rpx;
+ 
+}
+
+ .nick-name {
+   font-size: 30rpx;
+   padding-top: 30rpx;
+}  
+
+.title-background {
+  width: 100%;
+  height: 300rpx;
+  opacity: .3;
+  /* display: absolute; */
+}
+
+.background-wrapper {
+  width: 100%;
+  height: 300rpx;
+  z-index: 1;
+  border-bottom: 1rpx solid #eeeeee;
+}
+
+.info-wrapper {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 300rpx;
+  z-index: 10;
+  border-bottom: 1rpx solid #eeeeee;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+}
+
+.row-btn {
+  display: flex;
+  justify-content:space-between;
+  align-self:stretch;
+  background-color: #fff;
+  align-items:center;
+  padding: 20rpx 10rpx 20rpx 10rpx;
+}
+
+.row-btn .desc {
+  display:flex;
+  flex:1;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+}

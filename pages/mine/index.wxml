@@ -1,0 +1,18 @@
+<!--pages/mine/index.wxml-->
+<import src="../../template/icon.wxml"/>
+<view class="page-container">
+  <view class="mine-title">
+    <view class="background-wrapper">
+      <image class="title-background" src="../../assert/imgBackground.png" />
+    </view>
+    <view class="info-wrapper">
+      <image class="image-pic" src="{{userInfo.avatarUrl}}" />
+      <text class="nick-name">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view bindtap="showLocation" class="row-btn">
+    <template is="icon" data="{{iconSrc: '../../assert/location.png'}}" />
+    <text class="desc"> 收货地址</text>
+    <template is="icon" data="{{iconSrc: '../../assert/right.png'}}" />
+  </view>
+</view>

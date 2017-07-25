@@ -1,0 +1,39 @@
+/**app.wxss**/
+.container {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 200rpx 0; */
+  box-sizing: border-box;
+  background-color: #efeff4;
+  flex:1;
+} 
+page {
+  display:flex;
+  min-height: 100%;
+  background-color: #eeeeee;
+}
+
+.common-icon {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.common-loading {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.page-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1rpx solid #eeeeee;
+}
+
+.place-holder {
+  color: #808080;
+}

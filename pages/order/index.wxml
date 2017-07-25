@@ -1,0 +1,4 @@
+<!--pages/order/index.wxml-->
+<view class="page-container">
+  <text>您还没有点过外卖哦~</text>
+</view>

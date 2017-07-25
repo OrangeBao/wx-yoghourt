@@ -1,0 +1,49 @@
+/* pages/location/index.wxss */
+.row-wrapper {
+  background-color: #ffffff;
+  display: flex;
+  align-self: stretch;
+  padding: 20rpx; 
+  border-bottom: 1rpx solid #eeeeee;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-wrapper {
+  flex-direction: column;
+}
+
+.edit-btn {
+ border-left: 2rpx solid #eeeeee;
+ padding-left: 20rpx;
+}
+
+.edit-btn-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.text-wrapper {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  font-size: 30rpx;
+}
+
+.page-container {
+  justify-content: space-between;
+}
+
+.scroll-wrapper {
+  display: flex;
+  flex: 1;
+  align-self:stretch;
+  flex-direction:column;
+}
+
+.add-btn-wrapper {
+  display: flex;
+  align-self: stretch;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  background-color: #ffffff;
+}

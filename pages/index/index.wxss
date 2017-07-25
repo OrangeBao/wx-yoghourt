@@ -1,0 +1,157 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.scroll-wrapper {
+  display: flex;
+  flex: 1;
+  align-self: stretch;
+  border-top: 1rpx solid #eeeeee;
+  flex-direction: column;
+}
+
+.pro-wrapper {
+  display: flex;
+  align-self: stretch;
+}
+
+.wrapper {
+  display: flex;
+  /* width: 100%; */
+  height: 200rpx;  
+  background-color: #fff;
+  margin-bottom: 10rpx;
+  flex-direction: row;
+  align-items: center;
+  padding: 15rpx;
+  flex:1;
+
+}
+.wrapper:first {
+  border-top: 1rpx solid #eeeeee;
+}
+
+.image-wrapper {
+  width:200rpx;
+  height: 200rpx;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  padding: 40rpx 0 10rpx 20rpx;
+  flex:1;
+}
+
+.detail-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.month-sall {
+  font-size:25rpx;
+  color:#707070;
+  padding-top: 20rpx;
+}
+
+.price {
+  font-size:25rpx;
+  color:#ff0000;
+  padding-top: 20rpx; 
+}
+
+.detail-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex:1;
+}
+
+.btn-wrapper {
+  display:flex;
+  border:1rpx solid #aaa;
+  border-radius:40rpx;
+  align-items:center;
+  justify-content:center;
+}
+
+.reduce-btn {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+
+.image-count-btn {
+  width: 30rpx;
+  height: 30rpx;
+  padding: 10rpx;
+}
+
+.count-no {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-left: 1rpx solid #eeeeee;
+  border-right: 1rpx solid #eeeeee;
+}
+
+.shopping-cart {
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  align-self:stretch;
+}
+
+.shopping-cart-icon {
+  width: 60rpx;
+  height: 60rpx;
+  position: relative;
+  overflow: visible;
+}
+
+.ok-btn {
+  width:200rpx;
+}
+
+.order-count {
+  position: absolute;
+  right: -20rpx;
+  top: 0;
+  border: 1rpx solid #ff0000;
+  background-color:#ff0000;
+  color: #fff;
+  font-size: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+  text-align: center;
+  border-radius: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<import src="../../template/template.wxml"/>
+<view class="container">
+  <scroll-view scroll-y class="scroll-wrapper" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class="pro-wrapper" wx:for="{{production}}" wx:for-index="idx" wx:for-item="pro"  wx:key="{{pro.productionId}}">
+       <template is="msgItem" data="{{...pro, count: order[pro.productionId]}}"/>
+    </view>
+  </scroll-view>
+  <view class="shopping-cart">
+    <image class="shopping-cart-icon" src="../../assert/shoppingCart.png">
+      <view class="order-count">
+        <text>{{total}}</text>
+      </view>
+    </image>
+    <view  class="ok-btn">
+      <button size="mini" type="primary" disabled="{{ total === 0 }}" bindtap="goToConfirm" hover-class="other-button-hover"> 选好了 </button>
+    </view>
+  </view>
+</view>

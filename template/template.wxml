@@ -1,0 +1,27 @@
+<template name="msgItem">
+  <view class="wrapper">
+    <image mode="aspectFit" class="image-wrapper" src="{{imgSrc}}" />
+    <view class="text-wrapper">
+      <text class="pro-title"> {{title}} </text>
+      <view class="detail-wrapper">
+        <view class="detail-left">
+          <text class="month-sall"> 月售 {{monthSall}}</text>
+          <text class="price"> ￥{{price}} </text>
+        </view>
+        <view class="detail-right">
+         <view class="btn-wrapper">
+            <view class="reduce-btn" wx:if="{{count > 0 }}">
+              <view style="display: flex"  bindtap="countReduce" data-production-id="{{productionId}}">
+              <image class="image-count-btn" src="../../assert/reduce.png" />
+              </view>
+              <text class="count-no">{{count}}</text>
+            </view>
+            <view style="display: flex" bindtap="countAdd" data-production-id="{{productionId}}">
+              <image class="image-count-btn" src="../../assert/add.png" />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
