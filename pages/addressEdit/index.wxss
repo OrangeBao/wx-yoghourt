@@ -1,3 +1,6 @@
+.page-container {
+  align-items:stretch;
+}
 .row-wrapper {
   display: flex;
   align-self: stretch;

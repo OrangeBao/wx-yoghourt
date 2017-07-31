@@ -1,20 +1,25 @@
 <!--pages/order/index.wxml-->
+<import src="../../template/loading.wxml"/>
 <view class="page-container">
-  <view class="null-wrapper" wx:if="{{orderList.length === 0}}">
+  <view class="null-wrapper" wx:if="{{pageType === 0}}">
+    <template  is="loading" />
+  </view>
+  <view class="null-wrapper" wx:elif="{{orderList.length === 0}}">
     <text>您还没有点过外卖哦~</text>
   </view>
-  <scroll-view wx:if="{{orderList.length > 0}}">
+  <scroll-view wx:else class="scroll-wrapper">
     <view class="order-wrapper" wx:for="{{orderList}}">
       <view class="order-id-wrapper">
-        <text>订单号:{{item.orderId}}</text>
+        <text>订单号:DT00000{{item.orderId}}</text>
       </view>
       <view class="order-desc-wrapper">
-        <text>产品描述</text>
+        <text>商品描述: {{item.desc}}</text>
       </view>
       <view class="oreder-action-wrapper">
-      <text class="summary">共2件商品 实付款：￥100</text>
+      <text class="summary">共{{item.count}}件商品 实付款：￥{{item.money}}</text>
         <view>
-          <button size="mini">确认收货</button>
+          <text wx:if="{{item.statue === 0}}" >等待商家确认</text>
+          <button wx:if="{{item.statue === 1}}" size="mini">确认收货</button>
         </view>
       </view>
     </view>

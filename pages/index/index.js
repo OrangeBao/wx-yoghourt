@@ -1,39 +1,11 @@
 //index.js
 //获取应用实例
+var urlHelper = require('../../utils/urlHelper');
 var app = getApp()
 Page({
   data: {
     motto: '酸奶',
-    production: [
-      {
-        title: '向日葵酸奶',
-        monthSall: 10,
-        price: 15,
-        productionId: 0,
-        imgSrc: '../../assert/title.png'
-      },
-      {
-        title: '蔓越莓酸奶',
-        monthSall: 100,
-        price: 17,
-        productionId: 1,
-        imgSrc: '../../assert/title.png'
-      },
-      {
-        title: '葡萄干酸奶',
-        monthSall: 10,
-        price: 20,
-        productionId: 2,
-        imgSrc: '../../assert/title.png'
-      },
-      {
-        title: '纯酸奶',
-        monthSall: 8,
-        price: 8,
-        productionId: 3,
-        imgSrc: '../../assert/title.png'
-      }
-    ],
+    production: null,
     order: {},
     total: 0
   },
@@ -44,15 +16,24 @@ Page({
     // })
   },
   onLoad: function () {
-    // console.log('onLoad')
-    // var that = this
-    // //调用应用实例的方法获取全局数据
-    // app.getUserInfo(function(userInfo){
-    //   //更新数据
-    //   that.setData({
-    //     userInfo:userInfo
-    //   })
-    // })
+    let that = this;
+    wx.request({
+      url: urlHelper.getUrl('/getAllProductions'),
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (response) {
+       that.setData({
+         production: response.data
+       });
+      },
+      fail: function(err) {
+        console.log(err);
+      },
+      complete: function(res) {
+        console.log(res);
+      }
+    })
   },
   countAdd: function(event) {
     let proId = event.currentTarget.dataset.productionId;

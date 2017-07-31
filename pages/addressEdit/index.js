@@ -1,4 +1,6 @@
 // pages/addressEdit/index.js
+var urlHelper = require('../../utils/urlHelper');
+var app = getApp();
 Page({
 
   /**
@@ -8,15 +10,18 @@ Page({
     name: null,
     sex: 1,
     phone: null,
-    address: null
+    address: null,
+    addressId: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options = {}) {
-    let query = JSON.parse(options.query);
-    this.setData(query);
+    if (options.query) {
+      let query = JSON.parse(options.query);
+      this.setData(query);
+    }
   },
 
   /**
@@ -83,5 +88,30 @@ Page({
         console.log(JSON.stringify(e));
       }
     });
+  },
+
+  formSubmit: function(e) {
+    const fromValue = Object.assign({}, this.data, e.detail.value);
+    fromValue.openId = app.globalData.openId;
+    const pages = getCurrentPages();
+    const prePage = pages[pages.length - 2]
+    let url = urlHelper.getUrl('/updateAddress');
+
+    if (fromValue.addressId === null) {
+      url = urlHelper.getUrl('/addAddress');
+      
+    }
+    wx.request({
+      url: url,
+      data: fromValue,
+      success: function (data) {
+        if (prePage) {
+          prePage.updateAddressList && prePage.updateAddressList();
+        }
+        wx.navigateBack({
+          delta: 1
+        })
+      }
+    })
   }
 })

@@ -1,4 +1,7 @@
 // pages/confirm/index.js
+var urlHelper = require('../../utils/urlHelper');
+var app = getApp()
+var SYS = require('../../utils/emitter');
 Page({
 
   /**
@@ -15,7 +18,10 @@ Page({
   onLoad: function (options) {
     const query = JSON.parse(options.query);
     this.setData({
-      orders: query
+      orders: query,
+      money: query.reduce((d, o) => {
+        return d + o.price * o.count;
+      }, 0)
     });
   },
 
@@ -78,5 +84,27 @@ Page({
     this.setData({
       address
     });
+  },
+
+  placeOrder: function(address) {
+    const order = {
+      count: this.data.orders.length,
+      desc: this.data.orders.reduce((d, o) => {
+        return d + o.title + ' ' + o.count + '份；';
+      }, ''),
+      money: this.data.money,
+      statue: 0,
+      addressId: this.data.address.addressId
+    };
+    wx.request({
+      url: urlHelper.getUrl('/addOrder'),
+      data: Object.assign({ openId: app.globalData.openId}, order),
+      success: function(data) {
+        SYS.publish();
+        wx.switchTab({
+          url: '../order/index'
+        });
+      }
+    })
   }
 })

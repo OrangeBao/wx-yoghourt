@@ -1,11 +1,11 @@
 <template name="msgItem">
   <view class="wrapper">
-    <image mode="aspectFit" class="image-wrapper" src="{{imgSrc}}" />
+    <image mode="aspectFit" class="image-wrapper" src="{{'../../assert/' + imgId + '.png'}}" />
     <view class="text-wrapper">
       <text class="pro-title"> {{title}} </text>
       <view class="detail-wrapper">
         <view class="detail-left">
-          <text class="month-sall"> 月售 {{monthSall}}</text>
+          <text class="month-sall"> 月售 {{monthSell}}</text>
           <text class="price"> ￥{{price}} </text>
         </view>
         <view class="detail-right">

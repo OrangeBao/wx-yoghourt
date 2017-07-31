@@ -1,26 +1,15 @@
 // pages/location/index.js
+var urlHelper = require('../../utils/urlHelper');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    addressList: [
-      {
-        name: 'A',
-        sex: 1,
-        phone: '15250051111',
-        address: '苏州高新区东渚镇龙景花园5区'
-      },
-      {
-        name: 'B',
-        sex: 0,
-        phone: '15250051111',
-        address: '苏州高新区科技城高新软件园'
-
-      }
-    ],
-    type: null
+    addressList: [],
+    type: null,
+    pageType: 0
   },
 
   /**
@@ -29,6 +18,24 @@ Page({
   onLoad: function (options) {
     this.setData({
       type: options.type
+    });
+    this.updateAddressList();
+  },
+
+  updateAddressList: function(cb) {
+    const that = this;
+    wx.request({
+      url: urlHelper.getUrl('/getAllAddress'),
+      data: {
+        openId: app.globalData.openId
+      },
+      success: function (data) {
+        that.setData({
+          addressList: data.data,
+          pageType: 1
+        });
+        cb && cb();
+      }
     });
   },
 

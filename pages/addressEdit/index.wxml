@@ -1,11 +1,11 @@
 <!--pages/addressEdit/index.wxml-->
-<view class="page-container">
+<form class="page-container" bindsubmit="formSubmit" bindreset="formReset">
   <view style="border-top: 4rpx solid #eeeeee;" class="form-wrapper">
   <view class="row-wrapper contact bottom-line">
     <text class="label approach-top">联系人</text>
     <view class="input-wrapper">
-      <input placeholder="姓名" value="{{name}}" />
-      <radio-group class="radio-group" bindchange="radioChange">
+      <input name="name" placeholder="姓名" value="{{name}}" />
+      <radio-group name="sex" class="radio-group" bindchange="radioChange">
         <label class="radio">
           <radio value="{{0}}" checked="{{sex === 0}}"/>先生
         </label>
@@ -17,16 +17,16 @@
   </view>
   <view class="row-wrapper bottom-line">
     <text  class="label">手机号码</text>
-    <input placeholder="手机号码" value="{{phone}}" />
+    <input placeholder="手机号码" name="phone" value="{{phone}}" />
   </view>
   <view class="row-wrapper">
     <text class="label">收货地址</text>
     <view class="address-wrapper" bindtap="getLocation">
       <text class="place-holder" wx:if="{{address === null}}">小区/街道/大厦/学校</text>
-      <text wx:else>{{address}}</text>
+      <text name="address" wx:else>{{address}}</text>
     </view>
   </view>
   </view>
-  <button style="width: 92%" type="primary" disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 确定 </button>
+  <button formType="submit" style="width: 92%" type="primary" disabled="{{disabled}}" hover-class="other-button-hover"> 确定 </button>
   <button style="width: 92%" type="default" disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 删除 </button>
-</view>
+</form>

@@ -47,3 +47,7 @@
   padding-bottom: 10rpx;
   background-color: #ffffff;
 }
+
+.center {
+  justify-content: center;
+}

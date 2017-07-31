@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <import src="../../template/template.wxml"/>
-<view class="container">
+<import src="../../template/loading.wxml"/>
+<view class="container"  wx:if="{{production && production.length > 0}}">
   <scroll-view scroll-y class="scroll-wrapper" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
     <view class="pro-wrapper" wx:for="{{production}}" wx:for-index="idx" wx:for-item="pro"  wx:key="{{pro.productionId}}">
        <template is="msgItem" data="{{...pro, count: order[pro.productionId]}}"/>
@@ -17,3 +18,7 @@
     </view>
   </view>
 </view>
+<view wx:else class="container loading-wrapper">
+  <template  is="loading" />
+</view>
+

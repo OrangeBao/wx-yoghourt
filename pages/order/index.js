@@ -1,28 +1,39 @@
+var urlHelper = require('../../utils/urlHelper');
+var app = getApp();
+var SYS = require('../../utils/emitter');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orderList: [
-      {
-        orderId: 'DX111222333',
-      },
-      {
-        orderId: 'DX111222334',
-      },
-      {
-        orderId: 'DX111222335',
-      }
-    ]
+    orderList: [],
+    pageType: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    const that = this;
+    SYS.subscribe(function () {
+      wx.request({
+        url: urlHelper.getUrl('/getAllOrders'),
+        data: {
+          openId: app.globalData.openId
+        },
+        success: function (response) {
+          that.setData({
+            orderList: response.data,
+            pageType: 1
+          });
+        }
+      });
+    });
+    SYS.publish();
   },
+
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

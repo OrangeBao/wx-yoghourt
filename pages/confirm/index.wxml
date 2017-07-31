@@ -24,10 +24,10 @@
   <view class="row-block pay-bar">
     <view>
      <text>应付：</text>
-     <text>￥{{0}}</text>
+     <text>￥{{money}}</text>
     </view>
     <view>
-      <button size="mini" type="primary" disabled="{{ total === 0 }}" bindtap="goToConfirm" hover-class="other-button-hover"> 立即下单 </button>
+      <button size="mini" type="primary" disabled="{{ !address }}" bindtap="placeOrder" hover-class="other-button-hover"> 立即下单 </button>
     </view>
   </view>
 </view>

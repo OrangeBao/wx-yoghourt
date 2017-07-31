@@ -48,3 +48,10 @@
 .summary {
   padding-right: 40rpx;
 }
+
+.scroll-wrapper {
+  display:flex;
+  flex:1;
+  align-self:stretch;
+  flex-direction:column;
+}
