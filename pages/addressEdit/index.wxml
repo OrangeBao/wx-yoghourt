@@ -28,5 +28,5 @@
   </view>
   </view>
   <button formType="submit" style="width: 92%" type="primary" disabled="{{disabled}}" hover-class="other-button-hover"> 确定 </button>
-  <button style="width: 92%" type="default" disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 删除 </button>
+  <button style="width: 92%" type="delete" disabled="{{addressId===null}}" bindtap="deleteAddress" hover-class="other-button-hover"> 删除 </button>
 </form>

@@ -1,6 +1,7 @@
 // pages/addressEdit/index.js
 var urlHelper = require('../../utils/urlHelper');
 var app = getApp();
+var phoneReg = /^[1][3578]\d{9}$/;
 Page({
 
   /**
@@ -90,28 +91,66 @@ Page({
     });
   },
 
-  formSubmit: function(e) {
-    const fromValue = Object.assign({}, this.data, e.detail.value);
-    fromValue.openId = app.globalData.openId;
-    const pages = getCurrentPages();
-    const prePage = pages[pages.length - 2]
-    let url = urlHelper.getUrl('/updateAddress');
+  showToast: function(msg) {
+    wx.showToast({
+      image: '../../assert/warn.png',
+      title: msg,
+      duration: 2000
+    })
+  },
 
-    if (fromValue.addressId === null) {
-      url = urlHelper.getUrl('/addAddress');
-      
-    }
-    wx.request({
-      url: url,
-      data: fromValue,
-      success: function (data) {
-        if (prePage) {
-          prePage.updateAddressList && prePage.updateAddressList();
+  deleteAddress: function() {
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定删除该条记录吗？',
+      success: function (res) {
+        if (res.confirm) {
+          that.showToast('删除功能正在开发中...');
+          // wx.request({
+          //   url: urlHelper.getUrl('/deleteAddress'),
+          //   data: {addressId: this.data.eddressId},
+          //   success: function() {
+          //     wx.navigateBack({
+          //       delta: 1
+          //     })
+          //   }
+          // });
         }
-        wx.navigateBack({
-          delta: 1
-        })
       }
     })
+  },
+
+  formSubmit: function(e) {
+    const fromValue = Object.assign({}, this.data, e.detail.value);
+    if (!fromValue.name) {
+      this.showToast('请输入姓名');
+    } else if (!fromValue.phone || !phoneReg.test(fromValue.phone)) {
+      this.showToast('请输入正确的手机号');
+    } else if (!fromValue.address) {
+      this.showToast('请输选择地址');
+    } else {
+      fromValue.openId = app.globalData.openId;
+      const pages = getCurrentPages();
+      const prePage = pages[pages.length - 2]
+      let url = urlHelper.getUrl('/updateAddress');
+
+      if (fromValue.addressId === null) {
+        url = urlHelper.getUrl('/addAddress');
+
+      }
+      wx.request({
+        url: url,
+        data: fromValue,
+        success: function (data) {
+          if (prePage) {
+            prePage.updateAddressList && prePage.updateAddressList();
+          }
+          wx.navigateBack({
+            delta: 1
+          })
+        }
+      })
+    }
   }
 })

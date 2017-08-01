@@ -10,7 +10,7 @@
         <view class="text-wrapper">{{item.name}} {{item.sex ? '女士' : '先生'}} {{item.phone}}</view>
         <view class="text-wrapper">{{item.address}}</view>
       </view>
-      <view class="edit-btn" bindtap="editAddress" data-index="{{index}}">
+      <view class="edit-btn" catchtap="editAddress" data-index="{{index}}">
         <image class="edit-btn-img" src="../../assert/edit.png" />
       </view>
     </view>

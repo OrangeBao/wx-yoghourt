@@ -1,0 +1,12 @@
+112.74.93.213
+ssl 111111
+
+certificate.crt  privateKey.key
+
+pm2 start --interpreter babel-node server.js
+
+/usr/local/src/yoghourt/yoghourt-manager/dist
+
+
+/usr/local/src/yoghourt/yoghourt-manager/dist
+
